@@ -4,10 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/
 # testing
 /coverage
-
+/appleredesign-pro
 # next.js
 /.next/
 /out/
