@@ -9,7 +9,7 @@ import {sanityClient} from '../../../sanity';
 const query = groq`*[_type == "productDoc"]{
     _id,
       ...
-  }`;
+  } | order(_createdAt asc)`;
 
 
 
@@ -23,8 +23,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
     const products = await sanityClient.fetch(query);
-
-console.log(products);
-res.status(200).json({products});
+    
+      res.status(200).json({products});
 }
 
