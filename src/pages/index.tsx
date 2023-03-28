@@ -9,6 +9,7 @@ import { GetServerSideProps } from 'next'
 import { fecthCategories } from '../../utils/fetchCategories'
 import Tabs from '@/components/Tabs'
 import { fecthProducts } from '../../utils/fetchProducts'
+import Products from '@/components/Products'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -32,8 +33,10 @@ export const getServerSideProps: GetServerSideProps<Props> = async () => {
 
 export default function Home({categories, products}:Props) {
 console.log(products);
-const tabData = {
-  data: categories
+
+const showProduct = (category: number) => {
+  return products.filter((product) => product.category._ref === categories[category]._id)
+  .map((product) => <Products product={product} key={product._id}/>)
 }
   return (
     <>
@@ -74,7 +77,13 @@ const tabData = {
               </Tab>
             ))}
           </Tab.List>
-          <Tab.Panels className='mx-auto max-w-fit  pt-10 pb-24 sm:px-4'></Tab.Panels>
+          <Tab.Panels className='mx-auto max-w-fit  pt-10 pb-24 sm:px-4'>
+            <Tab.Panel className='tabPanel'>{showProduct(0)}</Tab.Panel>
+            <Tab.Panel className='tabPanel'>{showProduct(1)}</Tab.Panel>
+            <Tab.Panel className='tabPanel'>{showProduct(2)}</Tab.Panel>
+            <Tab.Panel className='tabPanel'>{showProduct(3)}</Tab.Panel> 
+            
+          </Tab.Panels>
         </Tab.Group>
         </div>
       </section>
