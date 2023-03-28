@@ -27,7 +27,7 @@ interface Product{
     _updatedAt: string;
     _rev: string;
     _type: "productDoc";
-    _price: number;
+    price: number;
     slug: {
         _type: "slug";
         current: string;
