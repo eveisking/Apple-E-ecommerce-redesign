@@ -14,10 +14,10 @@ const Header = () => {
     }
     const session = false;
   return (
-    <header className='w-full flex items-center glassMorphism justify-between top-0 z-30'>
-        <div className='flex  items-center justify-center md:w-1/5 mt-5'>
+    <header className='w-full flex items-center glassMorphism justify-between top-0 z-50'>
+        <div className='flex items-center justify-center md:w-1/5 mt-5 sm:ml-4 px-3'>
         <Link href='/'>
-        <div className='relative p-0 h-10 w-5 object-contain cursor-pointer opacity-75 transition hover:opacity-100'>
+        <div className='relative p-0 h-10 w-5 sm:ml-4 object-contain cursor-pointer opacity-75 transition hover:opacity-100'>
              <Image src={apple} alt="" width={28} height={28}
              className={styles.img}/>
         </div>
@@ -31,13 +31,13 @@ const Header = () => {
                 <li><a href='/' className='headerLink'>Business</a></li>
             </ul> 
         </div>
-        <div className='flex items-center justify-around space-x-0 md:w-1/5 px-10'>
+        <div className='flex items-center justify-around space-x-4 md:w-1/5 px-10'>
             <SearchIcon className="headerIcon"/>
             <Link href="/checkout">
             <div className='relative'>
                 <span className='absolute -right-1 -top-2 z-50 flex h-4 w-4
                 items-center justify-center rounded-[100%]  text-[10px]
-                bg-gradient-to-r from-pink-500 to-blue-500 to-violet-500 p-2  text-white' >
+                bg-gradient-to-r from-pink-500 to-violet-500 p-2  text-white' >
                     5</span>
                     <ShoppingBagIcon  className='headerIcon'/>
             </div>
