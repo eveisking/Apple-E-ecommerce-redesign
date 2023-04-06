@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArrowRightIcon } from '@heroicons/react/outline'
+import { ArrowRightIcon, ChevronRightIcon } from '@heroicons/react/solid'
 import Image from 'next/image'
 import Button from './Button'
 
@@ -21,7 +21,7 @@ const Banner = () => {
             <div className='flex space-x-4 sm:items-center sm:justify-start items-center justify-center'>
                 <Button title='Buy Now' 
                 onClick={() => {}}/>
-                <a href='/' className='text-sm sm:text-lg sm:w-[55%] sm:link text-blue-600 flex items-center justify-center sm:justify-start'>Learn More <ArrowRightIcon className='w-3 h-3 sm:h-5 sm:w-5 transform hover:translate-x-2 duration-75 ml-1'/></a>
+                <a href='/' className='text-sm sm:text-lg sm:w-[55%] sm:link text-blue-600 flex items-center justify-center sm:justify-start'>Learn More <ChevronRightIcon className='w-3 h-3 sm:h-5 sm:w-5 transform hover:translate-x-2 duration-75 ml-1'/></a>
             </div>
         </div>
         <div className='relative h-[300px] w-[300px] sm:h-[450px] sm:w-[459px] transition-all duration-100 

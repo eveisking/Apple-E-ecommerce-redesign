@@ -7,9 +7,10 @@ import Banner from '@/components/Banner'
 import { Tab } from '@headlessui/react'
 import { GetServerSideProps } from 'next'
 import { fecthCategories } from '../../utils/fetchCategories'
-import Tabs from '@/components/Tabs'
 import { fecthProducts } from '../../utils/fetchProducts'
 import Products from '@/components/Products'
+import { Hero } from '@/components/Hero'
+import Cart from '@/components/Cart'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -47,7 +48,7 @@ const showProduct = (category: number) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
+     <Cart />
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Banner />
     
@@ -86,6 +87,7 @@ const showProduct = (category: number) => {
           </Tab.Panels>
         </Tab.Group>
         </div>
+        <Hero />
       </section>
     </>
   )

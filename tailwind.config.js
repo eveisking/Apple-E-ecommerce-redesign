@@ -13,7 +13,10 @@ module.exports = {
       fontFamily: {
         body: ['Poppins', 'sans-serif']
 
-      }
+      },
+      flex: {
+        '2': '2 2 0%'
+      },
     },
   },
   plugins: [],
