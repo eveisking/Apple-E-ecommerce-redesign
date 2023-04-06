@@ -4,6 +4,8 @@ import React from 'react'
 import styles from '../styles/Header.module.css'
 import apple from '../../public/apple2.png';
 import { SearchIcon, ShoppingBagIcon, UserIcon } from '@heroicons/react/outline';
+import { useSelector } from 'react-redux';
+import { selectCartItems } from '@/redux/cartSlice';
 
 const Header = () => {
 
@@ -13,6 +15,7 @@ const Header = () => {
       }
     }
     const session = false;
+    const items = useSelector(selectCartItems);
   return (
     <header className='w-full flex items-center glassMorphism justify-between top-0 z-50'>
         <div className='flex items-center justify-center md:w-1/5 mt-5 sm:ml-4 px-3'>
@@ -23,7 +26,7 @@ const Header = () => {
         </div>
         </Link>
         </div>
-        <div className='hidden flex-2 md:flex items-center px-2 '>
+        <div className='hidden md:flex items-center px-2 '>
             <ul className='flex items-center px-4 text-sm gap-10'>
                 <li><a href='/' className='headerLink'>Product</a></li>
                 <li><a href='/' className='headerLink'>Explore</a></li>
@@ -33,13 +36,17 @@ const Header = () => {
         </div>
         <div className='flex items-center justify-around space-x-4 md:w-1/5 px-10'>
             <SearchIcon className="headerIcon"/>
+            
             <Link href="/checkout">
-            <div className='relative'>
-                <span className='absolute -right-1 -top-2 z-50 flex h-4 w-4
-                items-center justify-center rounded-[100%]  text-[10px]
-                bg-gradient-to-r from-pink-500 to-violet-500 p-2  text-white' >
-                    5</span>
-                    <ShoppingBagIcon  className='headerIcon'/>
+              <div className='relative'>
+                   {items.length > 0 && (
+                  <span className='absolute -right-1 -top-2 z-50 flex h-4 w-4
+                      items-center justify-center rounded-[100%]  text-[10px]
+                      bg-gradient-to-r from-pink-500 to-violet-500 p-2  text-white' >
+                    {items.length}</span>
+                )}
+                
+                <ShoppingBagIcon  className='headerIcon'/>
             </div>
             </Link>
             <div className=''>
