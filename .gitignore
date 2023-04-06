@@ -7,7 +7,14 @@
 /
 # testing
 /coverage
-/appleredesign-pro
+/appleredesign-pro/node_modules
+/appleredesign-pro/components
+/appleredesign-pro/schemas/annotations
+/appleredesign-pro/schemas/blocks
+/appleredesign-pro/schemas/objects
+/appleredesign-pro/utils
+/appleredesign-pro/plugins
+
 # next.js
 /.next/
 /out/
