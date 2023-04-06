@@ -35,7 +35,7 @@ const checkout = () => {
      setGroupItemsInCart(groupItems);
     },[items]);
   return (
-    <section className='w-full bg-[#ececec] h-full'>
+    <section className='w-full bg-[#ececec] h-full pb-8'>
         <Header />
         <div className='h-[14vh] bg-white px-10 flex items-center justify-start
         shadow-sm'>
@@ -44,10 +44,19 @@ const checkout = () => {
             {items.length > 0? "Review Your Cart" : "Your Cart is Empty"}
             </h1>
         </div>
-        <div className='w-[83%] max-[89vw] mx-auto flex items-center justify-center mt-4 bg-white
-        py-4 rounded-md'>
-            <p className='text-[13px] font-medium'>Free delivery for purchase more than $50</p>
-        </div>
+        {items.length === 0 && (
+            <div className='flex w-full px-8 items-center justify-center my-8'>
+            <Button title='Contine Shopping'
+            onClick={() => router.push("/")} width='lg:w-[30%] w-[50%]'/>
+            </div>
+        )}
+        {items.length > 0 && (
+         <div className='w-[83.5%] max-[89vw] mx-auto flex items-center justify-center mt-4 bg-white
+         py-4 rounded-md'>
+             <p className='text-[13px] font-medium'>Free delivery for purchase more than $50</p>
+         </div>
+        )}
+        
 
         {items.length > 0 && (
             <div>
@@ -56,7 +65,7 @@ const checkout = () => {
          <div className='flex-2 w-full bg-white rounded-md
             h-max px-4 space-y-4 py-6 shadow-sm'>
 
-             <table className="table-auto w-full h-full">
+             <table className="table-auto w-full h-full space-y-4">
              <thead className='text-left uppercase py-4 space-y-2 font-semibold text-1xl divide-y-2'>
     <tr>
       <th>Apple</th>
