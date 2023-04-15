@@ -46,7 +46,6 @@ export interface CartState {
    
   }
 
-  export const selectCartTotal = (state:RootState ) => {
-        state.cart.items.reduce((total: number, item: Product) => (total += item.price), 0)
-  }
+  export const selectCartTotal = (state:RootState ) => state.cart.items.reduce((total: number, item: Product) => (total += item.price), 0)
+  
   export default cartSlice.reducer
