@@ -35,7 +35,7 @@ const checkout = () => {
      setGroupItemsInCart(groupItems);
     },[items]);
   return (
-    <section className='w-full bg-[#ececec] h-full pb-8'>
+    <section className='w-full bg-[#ececec] h-full min-h-screen pb-8'>
         <Header />
         <div className='h-[14vh] bg-white px-10 flex items-center justify-start
         shadow-sm'>
@@ -46,7 +46,7 @@ const checkout = () => {
         </div>
         {items.length === 0 && (
             <div className='flex w-full px-8 items-center justify-center my-8'>
-            <Button title='Contine Shopping'
+            <Button title='Continue Shopping'
             onClick={() => router.push("/")} width='lg:w-[30%] w-[50%]'/>
             </div>
         )}
@@ -66,8 +66,8 @@ const checkout = () => {
             h-max px-4 space-y-4 py-6 shadow-sm'>
 
              <table className="table-auto w-full h-full space-y-4">
-             <thead className='text-left uppercase py-4 space-y-2 font-semibold text-1xl divide-y-2'>
-    <tr>
+             <thead className='text-left uppercase py-4 font-semibold text-1xl divide-y-2 border-b border-black border-spacing-4 mb-6'>
+    <tr className='mb-4'>
       <th>Apple</th>
       <th>Price</th>
       <th>Quantity</th>
