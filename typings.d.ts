@@ -51,6 +51,7 @@ interface StripeProduct{
     description: string,
     object: string,
     quantity: number,
+    images: string,
     price: {
         unit_amount: number,
     };
