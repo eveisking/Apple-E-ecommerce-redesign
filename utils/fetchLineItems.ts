@@ -1,6 +1,6 @@
 import React from 'react'
 
-const fetchLineItems = async (sessionId: string) => {
+export const fetchLineItems = async (sessionId: string) => {
     const res = await fetch(`
     ${process.env.NEXT_PUBLIC_BASE_URL}/api/getSession?session_id=${sessionId}`);
 
@@ -12,5 +12,3 @@ const fetchLineItems = async (sessionId: string) => {
   return products
     
 }
-
-export default fetchLineItems

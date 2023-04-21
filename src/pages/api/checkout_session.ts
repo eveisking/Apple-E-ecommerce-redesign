@@ -21,10 +21,12 @@ export default  async function handler(
             currency: "usd",
             product_data: {
                 name: item.title,
+                description: item.description,
                 images: [urlFor(item.image[0]).url()],
                 },
                 unit_amount: item.price * 100,  
         }, quantity: 1,
+           
     }));
     
     try {
@@ -34,7 +36,7 @@ export default  async function handler(
             line_items: transformedItems,
             payment_intent_data: {},
             mode: "payment",
-            success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
             cancel_url: `${req.headers.origin}/checkout`,
             metadata: {
                 images: JSON.stringify(
