@@ -1,7 +1,4 @@
 import Header from '@/components/Header'
-import { TrashIcon } from '@heroicons/react/outline'
-import { ChevronDownIcon } from '@heroicons/react/solid'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { useRouter } from 'next/router'
@@ -9,36 +6,37 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 //import currency from 'react-currency-formater'
 import { selectCartItems, selectCartTotal } from '@/redux/cartSlice'
+
+
 import Button from '@/components/Button'
 import CheckoutProducts from '@/components/CheckoutProducts'
 import OrderSummary from '@/components/OrderSummary'
 
 
+
 const checkout = () => {
-    const buynow = ()=> {
-        return null;
-    }
     const router = useRouter();
     const items = useSelector(selectCartItems);
-
     const [groupItemsInCart, setGroupItemsInCart ] = useState(
         {} as {[key: string]: Product[]}
     );
 
     useEffect(() => {
-     const groupItems = items.reduce((results, item) => {
+     const groupItems = items.reduce((results, item) => { 
         (results[item._id] = results[item._id] || []).push(item);
         
         return results;
      }, {} as {[key: string]: Product[]}
      );
-     setGroupItemsInCart(groupItems);
+     setGroupItemsInCart(groupItems); 
     },[items]);
+
+    
   return (
     <section className='w-full bg-[#ececec] h-full min-h-screen pb-8'>
         <Header />
         <div className='h-[14vh] bg-white px-10 flex items-center justify-start
-        shadow-sm'>
+        shadow-sm'> 
             
             <h1 className='text-4xl '>
             {items.length > 0? "Review Your Cart" : "Your Cart is Empty"}
