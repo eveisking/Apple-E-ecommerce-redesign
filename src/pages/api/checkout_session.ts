@@ -24,7 +24,7 @@ export default  async function handler(
                 description: item.description,
                 images: [urlFor(item.image[0]).url()],
                 },
-                unit_amount: item.price * 100,  
+                unit_amount: item.price * 100,   
         }, quantity: 1,
            
     }));
